@@ -24,6 +24,18 @@ const int x_input = A0;
 const int y_input = A1;
 const int z_input = A2;
 
+enum DeviceState {
+    AWAITING,
+    MIC_ON,
+    USER_DANGER,
+    ERROR,
+};
+
+class Device {
+  public:
+    DeviceState state;
+}
+
 void setup() {
 #if DO_LOG
     Serial.begin(9600);
