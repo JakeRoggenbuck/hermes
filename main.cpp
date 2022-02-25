@@ -60,6 +60,8 @@ void loop() {
     int raw_y = read_axis(y_input);
     int raw_z = read_axis(z_input);
 
+    // Maps raw values (e.g. raw_x) that exist in the range [RAW_MIN, RAW_MAX]
+    // to the range [-3000, 3000]
     long scaled_x = map(raw_x, RAW_MIN, RAW_MAX, -3000, 3000);
     long scaled_y = map(raw_y, RAW_MIN, RAW_MAX, -3000, 3000);
     long scaled_z = map(raw_z, RAW_MIN, RAW_MAX, -3000, 3000);
